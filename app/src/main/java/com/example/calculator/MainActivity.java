@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     public static int amount = 0;
-
+    static boolean isbool = false;
 
     String str1 = "Первое слагаемое";
     String str2 = "Второе слагаемое";
@@ -49,7 +49,9 @@ public class MainActivity extends AppCompatActivity {
     void errorHandling() {
         try {
             parses();
+            isbool = true;
         } catch (Exception e) {
+            isbool = false;
             System.out.println(e.getMessage());
         }
     }

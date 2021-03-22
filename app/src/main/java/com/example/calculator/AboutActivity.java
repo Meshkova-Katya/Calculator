@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.widget.EditText;
 
 import static com.example.calculator.MainActivity.amount;
+import static com.example.calculator.MainActivity.isbool;
 
 public class AboutActivity extends AppCompatActivity {
 
@@ -57,7 +58,7 @@ public class AboutActivity extends AppCompatActivity {
         } else {
             editText3.setText(temp1 + "+" + temp2 + " " + "=" + amount);
         }
-        if (temp1 == 0 && temp2 == 0) {
+        if (isbool == false) {
             editText3.setText("Некорректный ввод");
         }
 
