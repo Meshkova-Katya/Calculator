@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.widget.EditText;
+import android.widget.TextView;
 
 import static com.example.calculator.MainActivity.amount;
 import static com.example.calculator.MainActivity.isbool;
@@ -14,7 +14,7 @@ import static com.example.calculator.MainActivity.isbool;
 public class AboutActivity extends AppCompatActivity {
 
     @SuppressLint("StaticFieldLeak")
-    static EditText editText3;
+    static TextView textView3;
     int temp1;
     int temp2;
 
@@ -23,7 +23,7 @@ public class AboutActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
-        editText3 = findViewById(R.id.editText3);
+        textView3 = findViewById(R.id.textView3);
 
         temp1 = getIntent().getIntExtra("editText1", 0);
         temp2 = getIntent().getIntExtra("editText2", 0);
@@ -54,12 +54,12 @@ public class AboutActivity extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     public void choiceCondition() {
         if (temp2 < 0) {
-            editText3.setText(temp1 + "+" + "(" + temp2 + ")" + " " + "=" + amount);
+            textView3.setText(temp1 + "+" + "(" + temp2 + ")" + " " + "=" + amount);
         } else {
-            editText3.setText(temp1 + "+" + temp2 + " " + "=" + amount);
+            textView3.setText(temp1 + "+" + temp2 + " " + "=" + amount);
         }
-        if (isbool == false) {
-            editText3.setText("Некорректный ввод");
+        if (!isbool) {
+            textView3.setText("Некорректный ввод");
         }
 
     }
